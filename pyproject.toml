@@ -1,0 +1,27 @@
+[build-system]
+requires = ["setuptools>=61"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "ibeat-totspineseg" # name needs to exactly match folder name in src but with dashes, no underscore
+version = "0.0.0"
+dependencies = [
+  'numpy',
+  'pydantic<2.13', # FORCED: Stops 2.13 ClassAttribute removal crash
+  'pandas',
+  'nibabel',
+  'napari',
+  'seaborn',
+  'antspyx',
+  'dbdicom',
+  'vreg[rw]',
+  'numpyradiomics',
+  'pydmr',
+  'miblab',
+  'miblab-data',
+  'miblab_plot',
+  'totalspineseg[nnunetv2]'
+]
+
+[tool.setuptools.packages.find]
+where = ["src"]
